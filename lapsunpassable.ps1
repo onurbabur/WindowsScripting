@@ -2,6 +2,6 @@ $computers = (Get-ADComputer -SearchBase "OU=TURKEY-TR,OU=Accounts,DC=xxx,DC=xxx
 
   foreach ($comp in $computers) {
 
-Get-AdmPwdPassword -ComputerName $comp | where {$_.password -eq $null} | select computername, Distinguishedname
+        Get-AdmPwdPassword -ComputerName $comp | where {$_.password -eq $null} | select computername, Distinguishedname
 
 }
