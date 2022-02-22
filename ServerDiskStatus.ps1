@@ -36,7 +36,7 @@ tr:nth-child(even) { `
   </tr> "
 
 
-Get-ADComputer -filter  {enabled -eq "true"} -SearchScope Subtree -SearchBase "OU=Servers,DC=ronesans,DC=hol" | ForEach-Object {
+Get-ADComputer -filter  {enabled -eq "true"} -SearchScope Subtree -SearchBase "OU=Servers,DC=babur,DC=hol" | ForEach-Object {
 
     $srvname = $_.name
     $ipadd = (resolve-dnsname $srvname).IPAddress
@@ -73,7 +73,7 @@ Get-ADComputer -filter  {enabled -eq "true"} -SearchScope Subtree -SearchBase "O
 
 
 
-Get-ADComputer -filter  {enabled -eq "true"} -SearchScope Subtree -SearchBase "OU=Domain Controllers,DC=ronesans,DC=hol" | ForEach-Object {
+Get-ADComputer -filter  {enabled -eq "true"} -SearchScope Subtree -SearchBase "OU=Domain Controllers,DC=babur,DC=hol" | ForEach-Object {
 
     $srvname = $_.name
     $ipadd = (resolve-dnsname $srvname).IPAddress
@@ -117,6 +117,6 @@ $diskstates += "</table> `
 
 #$diskstates | Out-File D:\test.html
 
-Send-MailMessage -From "MSY Reports <ronesanit@ronesans.com>" -To "IT MSY <hld-it-msy@ronesans.com>" `
+Send-MailMessage -From "MSY Reports <it@rbabur.com>" -To "IT MSY <hld-it-msy@babur.com>" `
                         -Subject "Sunucu Doluluk Oranları" -Body $diskstates -BodyAsHtml `
-                       -SmtpServer rize.ronesans.hol -Port 25 -Encoding UTF8
+                       -SmtpServer 172.22.22.22 -Port 25 -Encoding UTF8
