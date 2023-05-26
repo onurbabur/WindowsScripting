@@ -1,1 +1,0 @@
-﻿Search-ADAccount –AccountDisabled –UsersOnly –SearchBase "OU=TURKEY-TR,OU=Accounts,DC=babur,DC=hol" | Move-ADObject –TargetPath "OU=Deleted Users,OU=Deleted Accounts,DC=babur,DC=hol"
