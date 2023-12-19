@@ -21,6 +21,7 @@ try {
                 
                 # Eski Sysmon sürümünü kaldır
                 & sysmon -u
+                & sysmon64 -u
                 
                 # Yeni Sysmon sürümünü yükle
                 & "\\xxx\SYSVOL\xxx\softwaresetup\Sysmon\Sysmon.exe" -i -accepteula
